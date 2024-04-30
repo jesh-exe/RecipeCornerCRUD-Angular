@@ -30,8 +30,8 @@
     <div class="card-body text-center">
       <!-- Router Link to send the id with the Route so that the next component can use it -->
       <button class="btn btn-outline-success m-1" [routerLink]="['/recipes',recipe.id]">View Recipe</button>
-      <button class="btn btn-danger m-1" (click)="deleteRecipe(recipe.id)" >Delete</button>
-      <button class="btn btn-outline-warning m-1" [routerLink]="['/update',recipe.id]">Update</button>
+      <button [hidden]="!loginService.isLoggedIn" class="btn btn-danger m-1" (click)="deleteRecipe(recipe.id)" >Delete</button>
+      <button [hidden]="!loginService.isLoggedIn" class="btn btn-outline-warning m-1" [routerLink]="['/update',recipe.id]">Update</button>
     </div>
   </div>
 </div>

@@ -17,6 +17,7 @@ import { RecipeDataComponent } from './recipes/recipe-data/recipe-data.component
 import { RecipeAddComponent } from './recipes/recipe-add/recipe-add.component';
 import { FormsModule } from '@angular/forms';
 import { RecipeUpdateComponent } from './recipes/recipe-update/recipe-update.component';
+import { LoginComponent } from './login/login.component';
 
 function initFactory(initService: InitService) {
   return () => initService.init();
@@ -36,7 +37,7 @@ function initFactory(initService: InitService) {
     MatButtonModule
   ],
 
-  declarations: [
+  declarations: [	
     AppComponent,
     RecipesComponent,
     RecipeCardComponent,
@@ -44,8 +45,9 @@ function initFactory(initService: InitService) {
     WelcomeComponent,
     RecipeDataComponent,
     RecipeAddComponent,
-    RecipeUpdateComponent
-  ],
+    RecipeUpdateComponent,
+      LoginComponent
+   ],
 
 
   providers: [{

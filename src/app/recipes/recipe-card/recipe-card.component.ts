@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { LoginService } from 'src/app/login/services/login.service';
 import { Recipe } from '../Recipe.interface';
 import { RecipesComponent } from '../recipes.component';
 import { RecipesService } from '../services/Recipes.service';
@@ -16,7 +17,7 @@ export class RecipeCardComponent implements OnInit {
 
   @ViewChild(RecipesComponent) main : RecipesComponent
 
-  constructor(private recipeService : RecipesService) { }
+  constructor(private recipeService : RecipesService,public loginService : LoginService) { }
 
   list : Recipe[]
   

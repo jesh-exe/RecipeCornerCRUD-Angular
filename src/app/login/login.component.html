@@ -1,0 +1,21 @@
+<div class="container p-5 mt-sm-5">
+  <div class="row my-sm-5">
+    <div class="col-12 col-lg-5">
+      <img src="../../assets/—Pngtree—pancakes with juice and fruit_12164742.png" alt="" class="img-fluid">
+    </div>
+    <div class="offset-lg-1 col-12 col-lg-6">
+      <div class="display-3 text-center mb-5 text-success">Welcome Back</div>
+      <div class="mb-4 lead">
+        <label for="staticEmail" class="col-form-label">Email</label>
+        <input [(ngModel)]="loginDetails.email" type="text" class="form-control" id="staticEmail">
+      </div>
+      <div class="mb-4 lead">
+        <label for="inputPassword" class="col-form-label">Password</label>
+        <input [(ngModel)]="loginDetails.password" type="password" class="form-control" id="inputPassword">
+      </div>
+      <div class="text-center">
+        <button class="btn btn-outline-success" (click)="handleLogin()">Login</button>
+      </div>
+    </div>
+  </div>
+</div>

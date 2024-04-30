@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AddRecipeGuard } from './guards/add-recipe.guard';
+import { LoginComponent } from './login/login.component';
 import { RecipeAddComponent } from './recipes/recipe-add/recipe-add.component';
-import { RecipeCardComponent } from './recipes/recipe-card/recipe-card.component';
 import { RecipeDataComponent } from './recipes/recipe-data/recipe-data.component';
 import { RecipeUpdateComponent } from './recipes/recipe-update/recipe-update.component';
 import { RecipesComponent } from './recipes/recipes.component';
@@ -21,17 +22,24 @@ const routes: Routes = [
         component: RecipesComponent
     },
     {
-        path : "recipes/add",
-        component : RecipeAddComponent
+        path: "recipes/add",
+        component: RecipeAddComponent,
+        // This is the guard
+        canActivate: [AddRecipeGuard]
     },
     {
         // This is dynamic path, which takes recipeNumber dynamically and sends it to the Component
-        path : "recipes/:recipeNumber",
-        component : RecipeDataComponent
+        path: "recipes/:recipeNumber",
+        component: RecipeDataComponent
+    },
+    {
+        path: "login",
+        component: LoginComponent
     },
     {
         path: "update/:recipeNumber",
-        component : RecipeUpdateComponent
+        component: RecipeUpdateComponent,
+        canActivate: [AddRecipeGuard]
     }
 ];
 

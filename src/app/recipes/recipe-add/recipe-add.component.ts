@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { pipe } from '@angular/core/src/render3/pipe';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { Recipe } from '../Recipe.interface';
 import { RecipesService } from '../services/Recipes.service';
 
@@ -29,6 +31,9 @@ export class RecipeAddComponent implements OnInit {
   constructor(private recipeService : RecipesService, private route : Router) { }
 
   ngOnInit() {
+    // Using Router to access the Routing Events 
+    this.route.events.pipe(filter((event)=>event instanceof NavigationStart)).subscribe((event)=>console.log("Navigation Started"));
+    this.route.events.pipe(filter((event)=>event instanceof NavigationEnd)).subscribe((event)=>console.log("Navigation Ended"));
   }
 
   public handleAddData(){

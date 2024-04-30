@@ -9,9 +9,12 @@
         <li class="nav-item mx-3">
           <button class="nav-link" [routerLink]="'recipes'">Recipes</button>
         </li>
-        <li class="nav-item mx-3">
+        <li class="nav-item mx-3" [hidden]="!loginService.isLoggedIn">
           <button class="nav-link" [routerLink]="'recipes/add'">Add Recipe</button>
         </li>
+        <!-- <li class="nav-item mx-3">
+          <button class="btn btn-primary" [routerLink]="'recipes/add'">Login</button>
+        </li> -->
         <!-- <li class="nav-item mx-3 dropdown">
           <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
@@ -27,10 +30,11 @@
           <a class="nav-link disabled">Disabled</a>
         </li> -->
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-light" type="submit">Search</button>
-      </form>
+      <div class="d-flex mx-4">
+        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+        <button [hidden]="loginService.isLoggedIn" class="btn btn-lg btn-primary mx-2" [routerLink]="'login'">Login</button>
+        <button [hidden]="!loginService.isLoggedIn" class="btn btn-lg btn-danger mx-2" (click)="handleLogout()">Logout</button>
+      </div>
     </div>
   </div>
 </nav>
