@@ -1,7 +1,8 @@
 <nav class="navbar header-container navbar-expand-lg bg-light">
   <div class="container-fluid">
     <div [routerLink]="'/'" role="button" class="mx-2 me-4 my-2 text-white display-6" href="#">Recipe Corner</div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -32,8 +33,12 @@
       </ul>
       <div class="d-flex mx-4">
         <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-        <button [hidden]="loginService.isLoggedIn" class="btn btn-lg btn-primary mx-2" [routerLink]="'login'">Login</button>
-        <button [hidden]="!loginService.isLoggedIn" class="btn btn-lg btn-danger mx-2" (click)="handleLogout()">Logout</button>
+        <button [hidden]="loginService.isLoggedIn" class="btn btn-lg btn-primary mx-2"
+          [routerLink]="'login'">Login</button>
+        <button [hidden]="loginService.isLoggedIn" class="btn btn-lg btn-secondary mx-2" [routerLink]="'signup'">Sign
+          Up</button>
+        <button [hidden]="!loginService.isLoggedIn" class="btn btn-lg btn-danger mx-2"
+          (click)="handleLogout()">Logout</button>
       </div>
     </div>
   </div>

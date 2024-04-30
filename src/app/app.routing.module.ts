@@ -6,6 +6,7 @@ import { RecipeAddComponent } from './recipes/recipe-add/recipe-add.component';
 import { RecipeDataComponent } from './recipes/recipe-data/recipe-data.component';
 import { RecipeUpdateComponent } from './recipes/recipe-update/recipe-update.component';
 import { RecipesComponent } from './recipes/recipes.component';
+import { SignupComponent } from './signup/signup.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 // This file has all the routes defined for the Application
@@ -35,6 +36,10 @@ const routes: Routes = [
     {
         path: "login",
         component: LoginComponent
+    },
+    {
+        path : "signup",
+        component : SignupComponent
     },
     {
         path: "update/:recipeNumber",
