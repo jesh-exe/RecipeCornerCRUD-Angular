@@ -1,0 +1,118 @@
+<div class="container mt-4">
+
+  <div class="display-6 text-center my-5">
+      Update Recipe Data
+  </div>
+
+  <div>
+      <form (ngSubmit)="handleUpdateData()" #formData='ngForm'>
+          <div class="row">
+              <div class="col-12 col-sm-6 my-2">
+                  <div class="form-group">
+                      <label for="name">Name<span class="text-danger"> *</span></label>
+                      <input #recipeName="ngModel" minlength="8" maxlength="30" class=" form-control"
+                          [(ngModel)]="recipeFormData.name" type="text" name="name" required>
+                  </div>
+              </div>
+              <div class="col-12 col-sm-6 my-2">
+                  <div class="form-group">
+                      <label for="rating">Rating<span class="text-danger"> *</span></label>
+                      <input #recipeRating="ngModel" class="form-control" [(ngModel)]="recipeFormData.rating"
+                          name="rating" type="number" max="5" min="0" required>
+                      <div *ngIf="recipeRating.errors">
+                          Error
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-12 col-sm-6 my-2">
+                  <div class="form-group">
+                      <label for="ingredients">Ingredients<span class="text-danger"> *</span></label>
+                      <textarea class="form-control" name="ingredients" [(ngModel)]="recipeFormData.ingredients"
+                          cols="30" rows="4"></textarea>
+                  </div>
+              </div>
+              <div class="col-12 col-sm-6 my-2">
+                  <div class="form-group">
+                      <label for="instructions">Instructions<span class="text-danger"> *</span></label>
+                      <textarea [(ngModel)]="recipeFormData.instructions" name="instructions" class="form-control"
+                          cols="30" rows="4"></textarea>
+                  </div>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-12 col-sm-6 my-2">
+                  <div class="form-group">
+                      <label for="prepTimeMinutes">Preparation Time<span class="text-danger"> *</span></label>
+                      <input class="form-control" [(ngModel)]="recipeFormData.prepTimeMinutes" name="prepTimeMinutes"
+                          type="number" required>
+                  </div>
+              </div>
+              <div class="col-12 col-sm-6 my-2">
+                  <div class="form-group">
+                      <label for="cookTimeMinutes">Cooking Time<span class="text-danger"> *</span></label>
+                      <input class="form-control" [(ngModel)]="recipeFormData.cookTimeMinutes" name="cookTimeMinutes"
+                          type="number" required>
+                  </div>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-12 col-sm-6 my-2">
+                  <div class="form-group">
+                      <label for="servings">Servings<span class="text-danger"> *</span></label>
+                      <input class="form-control" [(ngModel)]="recipeFormData.servings" name="servings" type="number"
+                          required>
+                  </div>
+              </div>
+              <div class="col-12 col-sm-6 my-2">
+                  <div class="form-group">
+                      <label for="difficulty">Difficulty<span class="text-danger"> *</span></label>
+                      <input class="form-control" [(ngModel)]="recipeFormData.difficulty" name="difficulty"
+                          type="text" required>
+                  </div>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-12 col-sm-6 my-2">
+                  <div class="form-group">
+                      <label for="cuisine">Cuisine<span class="text-danger"> *</span></label>
+                      <input class="form-control" [(ngModel)]="recipeFormData.cuisine" name="cuisine" type="text"
+                          required>
+                  </div>
+              </div>
+              <div class="col-12 col-sm-6 my-2">
+                  <div class="form-group">
+                      <label for="tags">Tags<span class="text-danger"> *</span></label>
+                      <input class="form-control" [(ngModel)]="recipeFormData.tags" name="tags" type="text" required>
+                  </div>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-12 col-sm-6 my-2">
+                  <div class="form-group">
+                      <label for="calories">Calories<span class="text-danger"> *</span></label>
+                      <input class="form-control" [(ngModel)]="recipeFormData.caloriesPerServing" name="calories"
+                          type="number" required>
+                  </div>
+              </div>
+              <div class="col-12 col-sm-6 my-2">
+                  <div class="form-group">
+                      <label for="image">Image<span class="text-danger"> *</span></label>
+                      <input type="text" class="form-control" [(ngModel)]="recipeFormData.image" name="image"
+                          required>
+                  </div>
+              </div>
+          </div>
+
+          <div class="text-center my-5">
+              <button [disabled]="formData.invalid" type="submit" class="btn btn-success">Update</button>
+          </div>
+      </form>
+  </div>
+</div>

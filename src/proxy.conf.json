@@ -1,0 +1,6 @@
+{
+    "/api": {
+      "target": "https://dummyjson.com/recipes?limit=50",
+      "secure": false
+    }
+  }

@@ -1,0 +1,70 @@
+<div class="d-flex justify-content-center align-items-center h-75"
+    *ngIf="recipeData == null || recipeData == undefined">
+    <div class="spinner-grow text-success" role="status">
+    </div>
+</div>
+
+<div class="container my-5 p-5 bg-light rounded-4" *ngIf="recipeData != null || recipeData!= undefined ">
+    <div class="text-success display-5 text-center mb-5">
+        {{recipeData.name}}
+        <span class="badge rounded-pill rounded text-bg-success fs-6 align-middle">
+            {{recipeData.rating}}
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill"
+                viewBox="0 0 16 16">
+                <path
+                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+            </svg>
+        </span>
+    </div>
+    <div class="row">
+        <!-- Left Side -->
+        <div class="col-12 col-sm-12 col-md-4 my-3">
+            <img src={{recipeData.image}} class="img-fluid rounded" alt="">
+            <div class="border p-3 rounded bg-white mt-4 mb-2">
+                <div class="lead mb-3">Ingredients : </div>
+                <!-- <mat-chip-list>
+                    <mat-chip *ngFor="let ingredient of recipeData.ingredients">{{ingredient}}</mat-chip>
+                </mat-chip-list> -->
+            </div>
+        </div>
+
+        <!-- Right Side -->
+        <div class="col-12 col-sm-12 col-md-8 ps-md-5">
+            <!-- Instructions -->
+            <div class="mb-2 p-sm-3">
+                <div class="lead fs-4 mb-2">Instructions : </div>
+                <div>
+                    <ol class="fs-6 bg-white list-group list-group-numbered">
+                        <li class="list-group-item text-muted" *ngFor="let instruction of recipeData.instructions">
+                            {{instruction}}</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Other Details -->
+            <div class="accordion mt-4 mt-sm-2 p-sm-3" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                            aria-controls="panelsStayOpen-collapseOne">
+                            Other Details
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                        <div class="accordion-body">
+                            <div class="d-flex my-1">
+                                <div>Tags: {{recipeData.tags}}</div>
+                            </div>
+                            <div class="my-2">Calories : {{recipeData.caloriesPerServing}} cal</div>
+                            <div class="my-2">Preparation Time : {{recipeData.prepTimeMinutes}} minutes</div>
+                            <div class="my-2">Cooking Time : {{recipeData.cookTimeMinutes}} minutes</div>
+                            <div class="my-2">Cuisine : {{recipeData.cuisine}}</div>
+                            <div class="my-2">Difficulty : {{recipeData.difficulty}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
